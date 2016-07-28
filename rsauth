@@ -15,7 +15,7 @@ APIKEY=$(echo ${CREDS} | cut -d' ' -f2)
 TOKEN=$(curl -s https://identity.api.rackspacecloud.com/v2.0/tokens \
   -X POST \
   -d "{\"auth\":{\"RAX-KSKEY:apiKeyCredentials\":{\"username\":\"$USERNAME\", \"apiKey\":\"$APIKEY\"}}}" \
-  -H "Content-Type: application/json" | /jq '.access.token.id')
+  -H "Content-Type: application/json" | jq -r '.access.token.id')
 
 if [ -n "$TOKEN" ]; then
   exit 0
