@@ -9,9 +9,8 @@ if [ -z "$CREDS" ]; then
   exit 3
 fi
 
-ARRAY=($CREDS)
-USERNAME=${ARRAY[0]}
-APIKEY=${ARRAY[1]}
+USERNAME=$(echo ${CREDS} | cut -d' ' -f1)
+APIKEY=$(echo ${CREDS} | cut -d' ' -f2)
 
 TOKEN=$(curl -s https://identity.api.rackspacecloud.com/v2.0/tokens \
   -X POST \
