@@ -1,4 +1,4 @@
-FROM smashwilson/docker_auth:latest
+FROM carina/docker_auth:latest
 MAINTAINER Ash Wilson <smashwilson@gmail.com>
 
 RUN apk add --update jq curl
