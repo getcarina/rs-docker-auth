@@ -1,2 +1,3 @@
 # rs-docker-auth
-Docker authentication service with Rackspace API key auth
+
+Docker authentication service that uses Rackspace API keys.
